@@ -1,20 +1,27 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
+
+import { startTabs } from "../MainTabs/startMainTabs";
 
 class AuthScreen extends Component {
-//   constructor(props) {
-//     super(props);
-//     this.state = {
-//     };
-//   }
+    //   constructor(props) {
+    //     super(props);
+    //     this.state = {
+    //     };
+    //   }
 
-  render() {
-    return (
-      <View>
-        <Text> In Auth Screen </Text>
-      </View>
-    );
-  }
+    loginHandler = () => {
+        startTabs();
+    }
+
+    render() {
+        return (
+            <View>
+                <Text> In Auth Screen </Text>
+                <Button title="login" onPress={this.loginHandler} />
+            </View>
+        );
+    }
 }
 
 export default AuthScreen;
