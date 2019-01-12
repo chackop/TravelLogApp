@@ -20,12 +20,12 @@ const placeDetail = props => {
                 {modalContent}
                 <View>
                     <Button title="Delete" color="red" onPress={props.onItemDeleted} />
-                    {/* <TouchableOpacity onPress={props.onItemDeleted}>
+                    <TouchableOpacity onPress={props.onItemDeleted}>
                         <View style={styles.delicon}>
                             <Icon name="ios-trash" size={30} color="red" />
                         </View>
-                    </TouchableOpacity> */}
-                    <Button title="Close" onPress={props.onModalClosed} />
+                    </TouchableOpacity>
+                    {/* <Button title="Close" onPress={props.onModalClosed} /> */}
                 </View>
             </View>
         </Modal>
