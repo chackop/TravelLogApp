@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 
-import { startTabs } from "../MainTabs/startMainTabs";
+import { startTabs, goHome } from "../MainTabs/startMainTabs";
 
 class AuthScreen extends Component {
     //   constructor(props) {
@@ -11,7 +11,7 @@ class AuthScreen extends Component {
     //   }
 
     loginHandler = () => {
-        startTabs();
+        goHome();
     }
 
     render() {

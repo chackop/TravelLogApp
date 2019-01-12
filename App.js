@@ -7,13 +7,6 @@ Navigation.registerComponent("travellogapp.AuthScreen", () => AuthScreen);
 Navigation.registerComponent("travellogapp.SharedPlaceScreen", () => SharedPlaceScreen);
 Navigation.registerComponent("travellogapp.FindPlaceScreen", () => FindPlaceScreen);
 
-// Navigation.startSingleScreenApp({
-//   screen: {
-//     screen: 'travellogapp.AuthScreen',
-//     title: "Login"
-//   }
-// });
-
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {

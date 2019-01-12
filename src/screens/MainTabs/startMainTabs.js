@@ -1,6 +1,6 @@
 import { Navigation } from 'react-native-navigation';
 
-const startTabs = () => {
+export const startTabs = () =>
 
     Navigation.setRoot({
         root: {
@@ -38,8 +38,27 @@ const startTabs = () => {
         }
     });
 
-};
+export const goHome = () => Navigation.setRoot({
+    root: {
+        stack: {
+        id: 'App',
+        children: [
+                {
+                    component: {
+                        name: 'travellogapp.SharedPlaceScreen',
+                        options: {
+                            bottomTab: {
+                                text: 'Shared Place',
+                            }
+                        }
+                    },
+                }
+            ],
+        }
+    }
+});
 
-export default startTabs;
+
+// export default startTabs;
 
 
