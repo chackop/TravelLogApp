@@ -11,7 +11,8 @@ class AuthScreen extends Component {
     //   }
 
     loginHandler = () => {
-        goHome();
+        // goHome();
+        startTabs();
     }
 
     render() {
