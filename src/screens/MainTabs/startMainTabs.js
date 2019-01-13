@@ -1,12 +1,12 @@
 import { Navigation } from 'react-native-navigation';
-import { Icon } from 'react-native-vector-icons/Ionicons';
+// import { Icon } from 'react-native-vector-icons/Ionicons';
 
 
 
 export const startTabs = () => {
     Promise.all([
-        Icon.getImageSource("map", 30),
-        Icon.getImageSource("share", 30)
+        // Icon.getImageSource("map", 30),
+        // Icon.getImageSource("share", 30)
     ])
         .then(
             sources => {
@@ -20,7 +20,7 @@ export const startTabs = () => {
                                         options: {
                                             bottomTab: {
                                                 text: 'Shared Place',
-                                                icon: sources[0]
+                                                // icon: sources[0]
                                             }
                                         }
                                     }
@@ -31,7 +31,7 @@ export const startTabs = () => {
                                         options: {
                                             bottomTab: {
                                                 text: 'Find Place',
-                                                icon: sources[1]
+                                                // icon: sources[1]
                                             }
                                         }
                                     }
