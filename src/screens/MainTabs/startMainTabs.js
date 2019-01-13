@@ -2,9 +2,11 @@ import { Navigation } from 'react-native-navigation';
 // import { Icon } from 'react-native-vector-icons/Ionicons';
 
 const bottomTabs = {
+    id: "bottomTabsID",
     children: [
         {
             component: {
+                id: 'travellogapp.SharedPlaceScreen',
                 name: 'travellogapp.SharedPlaceScreen',
                 options: {
                     bottomTab: {
@@ -15,6 +17,7 @@ const bottomTabs = {
         },
         {
             component: {
+                id: 'travellogapp.FindPlaceScreen',
                 name: 'travellogapp.FindPlaceScreen',
                 options: {
                     bottomTab: {

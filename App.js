@@ -20,8 +20,14 @@ Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({
     root: {
       stack: {
+        id: "stackID",
         children: [{
           component: {
+            id: "travellogapp.PlaceDetailScreen",
+            name: "travellogapp.PlaceDetailScreen",
+          },
+          component: {
+            id: 'travellogapp.AuthScreen',
             name: 'travellogapp.AuthScreen'
           }
         }]

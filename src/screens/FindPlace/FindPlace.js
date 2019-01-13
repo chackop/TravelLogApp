@@ -7,26 +7,31 @@ import { selectPlace } from '../../store/actions/places';
 
 class FindPlaceScreen extends Component {
   itemSelectedHandler = key => {
-    
+
     const selPlace = this.props.places.find(place => {
       return place.key === key;
     });
 
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: "travellogapp.PlaceDetailScreen",
-        passProps: {
-          selectedPlace: selPlace
-        },
-        options: {
-          topBar: {
-            title: {
-              text: selPlace.name
+    Navigation.push(
+      "stackID",
+      // "bottomTabsID",
+      // this.props.componentId,
+      {
+        component: {
+          id: "travellogapp.PlaceDetailScreen",
+          name: "travellogapp.PlaceDetailScreen",
+          passProps: {
+            selectedPlace: selPlace
+          },
+          options: {
+            topBar: {
+              title: {
+                text: selPlace.name
+              }
             }
           }
         }
-      }
-    });
+      });
   }
 
   render() {

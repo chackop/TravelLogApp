@@ -7,7 +7,8 @@ import { deletePlace } from '../../store/actions/index'
 class PlaceDetailScreen extends Component {
     placeDeletedHandler = () => {
         this.props.onDeletePlace(this.props.selectedPlace.key);
-        Navigation.pop(this.props.componentId);
+        // Navigation.pop(this.props.componentId);
+        Navigation.pop("bottomTabsID");
     }
 
     render() {
