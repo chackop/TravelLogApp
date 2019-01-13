@@ -13,7 +13,8 @@ const store = configureStore()
 Navigation.registerComponentWithRedux("travellogapp.AuthScreen", () => AuthScreen, Provider, store);
 Navigation.registerComponentWithRedux("travellogapp.SharedPlaceScreen", () => SharedPlaceScreen, Provider, store);
 Navigation.registerComponentWithRedux("travellogapp.FindPlaceScreen", () => FindPlaceScreen, Provider, store);
-Navigation.registerComponent("travellogapp.PlaceDetailScreen", () => PlaceDetailScreen);
+// Navigation.registerComponent("travellogapp.PlaceDetailScreen", () => PlaceDetailScreen);
+Navigation.registerComponentWithRedux("travellogapp.PlaceDetailScreen", () => PlaceDetailScreen, Provider, store);
 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({

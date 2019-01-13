@@ -7,6 +7,7 @@ import { selectPlace } from '../../store/actions/places';
 
 class FindPlaceScreen extends Component {
   itemSelectedHandler = key => {
+    
     const selPlace = this.props.places.find(place => {
       return place.key === key;
     });
@@ -27,6 +28,7 @@ class FindPlaceScreen extends Component {
       }
     });
   }
+
   render() {
     return (
       <View style={styles.container}>
