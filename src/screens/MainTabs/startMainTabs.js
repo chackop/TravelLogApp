@@ -23,8 +23,14 @@ const bottomTabs = {
                 }
             }
         }
-    ],
-    options: {}
+    ]
+    // options: {
+    //     topBar: {
+    //         title: {
+    //             text: 'Home'
+    //         }
+    //     }
+    // }
 }
 
 
