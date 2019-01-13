@@ -6,6 +6,7 @@ import AuthScreen from './src/screens/Auth/Auth';
 import SharedPlaceScreen from './src/screens/SharedPlace/SharedPlace';
 import FindPlaceScreen from './src/screens/FindPlace/FindPlace';
 import PlaceDetailScreen from './src/screens/PlaceDetail/PlaceDetail';
+import SideMenu from './src/screens/SideMenu/SideMenu';
 
 
 const store = configureStore()
@@ -15,6 +16,7 @@ Navigation.registerComponentWithRedux("travellogapp.SharedPlaceScreen", () => Sh
 Navigation.registerComponentWithRedux("travellogapp.FindPlaceScreen", () => FindPlaceScreen, Provider, store);
 // Navigation.registerComponent("travellogapp.PlaceDetailScreen", () => PlaceDetailScreen);
 Navigation.registerComponentWithRedux("travellogapp.PlaceDetailScreen", () => PlaceDetailScreen, Provider, store);
+Navigation.registerComponentWithRedux("travellogapp.SideMenu", () => SideMenu, Provider, store);
 
 Navigation.events().registerAppLaunchedListener(() => {
   Navigation.setRoot({

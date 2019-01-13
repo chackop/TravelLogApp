@@ -1,72 +1,68 @@
 import { Navigation } from 'react-native-navigation';
 // import { Icon } from 'react-native-vector-icons/Ionicons';
-
-const bottomTabs = {
-    id: "bottomTabsID",
-    children: [
-        {
-            component: {
-                id: 'travellogapp.SharedPlaceScreen',
-                name: 'travellogapp.SharedPlaceScreen',
-                options: {
-                    bottomTab: {
-                        text: 'Shared Place',
-                    }
-                }
-            }
-        },
-        {
-            component: {
-                id: 'travellogapp.FindPlaceScreen',
-                name: 'travellogapp.FindPlaceScreen',
-                options: {
-                    bottomTab: {
-                        text: 'Find Place',
-                    }
-                }
-            }
-        }
-    ]
-    // options: {
-    //     topBar: {
-    //         title: {
-    //             text: 'Home'
-    //         }
-    //     }
-    // }
-}
-
+import SideMenu from '../SideMenu/SideMenu';
 
 
 export const startTabs = () =>
     Navigation.setRoot({
         root: {
-            bottomTabs
+            bottomTabs: {
+                id: "bottomTabsID",
+                children: [
+                    {
+                        component: {
+                            id: 'travellogapp.SharedPlaceScreen',
+                            name: 'travellogapp.SharedPlaceScreen',
+                            options: {
+                                topBar: {
+                                    leftButtons: [
+                                        {
+                                            id: 'SideMenuToggle',
+                                            // icon: require('../../assets/home.png'),
+                                            title: "Menu"
+                                        }
+                                    ]
+                                },
+                                bottomTab: {
+                                    text: 'Shared Place',
+                                }
+                            }
+                        }
+                    },
+                    {
+                        component: {
+                            id: 'travellogapp.FindPlaceScreen',
+                            name: 'travellogapp.FindPlaceScreen',
+                            options: {
+                                topBar: {
+                                    leftButtons: [
+                                        {
+                                            id: 'SideMenuToggle',
+                                            // icon: require('../../assets/map.png'),
+                                            title: "Menu"
+                                        }
+                                    ]
+                                },
+                                bottomTab: {
+                                    text: 'Find Place',
+                                }
+                            }
+                        }
+                    }
+                ],
+                options: {
+                    sideMenu: {
+                        id: "sideMenuID",
+                        left: {
+                            component: {
+                                id: "travellogapp.SideMenu",
+                                name: "travellogapp.SideMenu",
+                            }
+                        }
+                    }
+                }
+            }
         }
     });
-
-
-// export const goHome = () => Navigation.setRoot({
-//     root: {
-//         stack: {
-//             id: 'App',
-//             children: [
-//                 {
-//                     component: {
-//                         name: 'travellogapp.SharedPlaceScreen',
-//                         options: {
-//                             bottomTab: {
-//                                 text: 'Shared Place',
-//                             }
-//                         }
-//                     },
-//                 }
-//             ],
-//         }
-//     }
-// });
-
-
-// export default startTabs;
 
 

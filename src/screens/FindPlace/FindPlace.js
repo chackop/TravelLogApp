@@ -6,6 +6,34 @@ import { Navigation } from "react-native-navigation";
 import { selectPlace } from '../../store/actions/places';
 
 class FindPlaceScreen extends Component {
+  static options(passProps) {
+    return {
+      topBar: {
+        leftButtons: {
+          id: 'SideMenuToggle',
+          // icon: require('../../assets/menu.png')
+        }
+      }
+    };
+  }
+
+  constructor(props) {
+    super(props);
+    Navigation.events().bindComponent(this);
+  }
+
+  navigationButtonPressed({ SideMenuToggle }) {
+
+    if (SideMenuToggle) {
+      Navigation.mergeOptions(this.props.componentId, {
+        sideMenu: {
+      
+        }
+      });
+    }
+
+  }
+
   itemSelectedHandler = key => {
 
     const selPlace = this.props.places.find(place => {
