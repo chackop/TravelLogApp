@@ -1,9 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet } from 'react-native'
-import PlaceInput from '../../components/PlaceInput/PlaceInput';
+import { Text, View, StyleSheet, TextInput, Button, ScrollView, Image } from 'react-native'
 import { connect } from 'react-redux';
 import { addPlace } from '../../store/actions/index';
 import { Navigation } from 'react-native-navigation';
+import DefaultInput from '../../components/UI/DefaultInput/DefaultInput';
+import MainText from '../../components/UI/MainText/MainText';
+import HeadingText from '../../components/UI/HeadingText/HeadingText';
+// import imagePlaceholder from "../../assets/beauty-place.jpg"
 
 class SharedPlaceScreen extends Component {
   static options(passProps) {
@@ -27,7 +30,7 @@ class SharedPlaceScreen extends Component {
     if (SideMenuToggle) {
       Navigation.mergeOptions(this.props.componentId, {
         sideMenu: {
-      
+
         }
       });
     }
@@ -39,9 +42,33 @@ class SharedPlaceScreen extends Component {
   }
   render() {
     return (
-      <View style={styles.container}>
-        <PlaceInput onPlaceAdded={this.placeAddedhandler} />
-      </View>
+      <ScrollView>
+        <View style={styles.container}>
+          <MainText>
+            <HeadingText>
+              Share the text
+            </HeadingText>
+          </MainText>
+          <View style={styles.placeholder}>
+            {/* <Image source={imagePlaceholder} style={styles.preview} /> */}
+          </View>
+          <View>
+            <View style={styles.button}>
+              <Button title="Pick Image" />
+            </View>
+            <View style={styles.placeholder}>
+              <Text>
+                Map
+              </Text>
+            </View>
+            <Button title="Locate Me" />
+            <DefaultInput placeholder="Place Name" />
+            <View style={styles.button}>
+              <Button title="Share the Place" />
+            </View>
+          </View>
+        </View>
+      </ScrollView>
     )
   }
 }
@@ -49,6 +76,22 @@ class SharedPlaceScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     marginTop: 50,
+    flex: 1,
+    alignItems: 'center',
+  },
+  placeholder: {
+    borderWidth: 1,
+    borderColor: "black",
+    backgroundColor: "#eee",
+    width: "80%",
+    height: 150
+  },
+  button: {
+    margin: 8
+  },
+  preview: {
+    width: "100%",
+    height: "100%"
   }
 });
 
